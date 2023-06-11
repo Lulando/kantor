@@ -1,24 +1,26 @@
-<div>
-  <div class="form">
-    <form [formGroup]="selectCurrencyForm">
-      <div class="form-input">
-        <input id="amount" type="number" formControlName="amount" />
-      </div>
-      <div class="form-select">
-        <select
-          formControlName="currency"
-          id="currency"
-          [(ngModel)]="selectedOptionOne"
-        >
-          <option value="pln">Złoty</option>
-          <option value="dolar">Dolar</option>
-          <option value="euro">Euro</option>
-          <option value="funt">Funt</option>
-          <option value="frank">Frank</option>
-        </select>
-      </div>
-    </form>
-  </div>
+<div class="wrapper">
+  <form [formGroup]="selectCurrencyForm" class="form">
+    <input
+      id="amount"
+      type="number"
+      formControlName="amount"
+      class="form-input"
+      placeholder="Type value..."
+    />
+
+    <select
+      class="form-select"
+      formControlName="currency"
+      id="currency"
+      [(ngModel)]="selectedOptionOne"
+    >
+      <option value="pln">PLN</option>
+      <option value="dolar">USD</option>
+      <option value="euro">EURO</option>
+      <option value="funt">FUNT</option>
+      <option value="frank">FRANK</option>
+    </select>
+  </form>
 
   <app-converted-currency
     [amount]="this.selectCurrencyForm.value.amount"

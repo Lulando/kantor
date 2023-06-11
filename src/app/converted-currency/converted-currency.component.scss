@@ -1,3 +1,26 @@
-.form form {
+.form {
   display: flex;
+  gap: 1em;
+  width: 100%;
+  justify-content: center;
+  padding: 1em;
+  align-items: center;
+
+  &-content {
+    font-weight: 600;
+    font-size: 2em;
+  }
+
+  &-select {
+    padding: 0.2em 0.5em 0.2em 0;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    border: 2px #000 solid;
+    font-size: 1.2em;
+
+    option {
+      font-weight: 500;
+    }
+  }
 }

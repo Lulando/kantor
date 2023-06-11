@@ -1,3 +1,45 @@
-.form form {
+.wrapper {
   display: flex;
+  flex-direction: column;
+  gap: 2em;
+
+  .form {
+    display: flex;
+    gap: 1em;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+    &-input {
+      border: none;
+      outline: none;
+      padding: 0.5em;
+      border-bottom: 2px #000 solid;
+      font-weight: 600;
+      font-size: 1.125em;
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        -moz-appearance: textfield;
+        appearance: none;
+        margin: 0;
+      }
+    }
+
+    &-select {
+      padding: 0.2em 0 0.2em 0;
+      font-weight: 600;
+      cursor: pointer;
+      outline: none;
+      border: none;
+      border-bottom: #000 2px solid;
+      font-size: 1.5em;
+
+      option {
+        font-weight: 500;
+        cursor: pointer;
+      }
+    }
+  }
 }

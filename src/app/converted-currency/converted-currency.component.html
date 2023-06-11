@@ -1,30 +1,20 @@
-<div class="form">
-  <form [formGroup]="diffCurrencyForm">
-    <div class="form-input">
-      <div>
-        <input
-          type="number"
-          [readonly]="true"
-          value="{{
-            (convertToNumber(this.amount) * this.rates[this.curr]) /
-              this.rates[this.diffCurrencyForm.value.currency]
-              | number : '1.2-2'
-          }}"
-        />
-      </div>
-    </div>
-    <div class="form-select">
-      <select
-        formControlName="currency"
-        id="currencyTwo"
-        [(ngModel)]="selectedOption"
-      >
-        <option value="pln">Złoty</option>
-        <option value="dolar">Dolar</option>
-        <option value="euro">Euro</option>
-        <option value="funt">Funt</option>
-        <option value="frank">Frank</option>
-      </select>
-    </div>
-  </form>
-</div>
+<form [formGroup]="diffCurrencyForm" class="form">
+  <div class="form-content">
+    {{
+      (convertToNumber(this.amount) * this.rates[this.curr]) /
+        this.rates[this.diffCurrencyForm.value.currency] | number : "1.2-2"
+    }}
+  </div>
+  <select
+    class="form-select"
+    formControlName="currency"
+    id="currencyTwo"
+    [(ngModel)]="selectedOption"
+  >
+    <option value="pln">PLN</option>
+    <option value="dolar">USD</option>
+    <option value="euro">EURO</option>
+    <option value="funt">FUNT</option>
+    <option value="frank">FRANK</option>
+  </select>
+</form>
